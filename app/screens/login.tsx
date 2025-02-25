@@ -27,7 +27,7 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const { setAuth } = useAuthStore();
+  const { setAuth } = useAuthStore(); 
   const router = useRouter();
 
   async function handleLogin() {
@@ -38,20 +38,16 @@ export default function LoginScreen() {
 
     try {
       setIsLoading(true);
-      // Primeiro obtém o token
       const { data: authData } = await api.post<{ accessToken: string }>('/auth', {
         email,
         password,
         device_name: Platform.OS,
       });
 
-      // Configura o token para próxima requisição
       api.defaults.headers.common['Authorization'] = `Bearer ${authData.accessToken}`;
 
-      // Busca os dados do usuário
       const { data: userData } = await api.get<User>('/me');
 
-      // Salva token e dados do usuário
       setAuth(authData.accessToken, userData);
       router.replace('/screens/select-role');
     } catch (error: unknown) {

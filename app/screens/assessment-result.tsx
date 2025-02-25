@@ -51,13 +51,11 @@ function RadarChart({ data, labels, size = 300 }: RadarChartProps) {
   const radius = center - 10;
   const angleStep = (Math.PI * 2) / labels.length;
 
-  // Adiciona círculos de referência (20%, 40%, 60%, 80%, 100%)
   const circles = [0.2, 0.4, 0.6, 0.8, 1].map(scale => {
     const r = radius * scale;
     return `M${center},${center - r} A${r},${r} 0 1,1 ${center},${center + r} A${r},${r} 0 1,1 ${center},${center - r}`;
   });
 
-  // Adiciona linhas do centro até as pontas
   const axes = labels.map((_, i) => {
     const angle = i * angleStep - Math.PI / 2;
     const x = center + radius * Math.cos(angle);
@@ -74,7 +72,6 @@ function RadarChart({ data, labels, size = 300 }: RadarChartProps) {
   return (
     <Svg width={size} height={size}>
       <G transform={`translate(${padding + center}, ${padding + center})`}>
-        {/* Círculos de referência */}
         {[0.2, 0.4, 0.6, 0.8, 1].map((scale, i) => (
           <Circle
             key={i}
@@ -85,7 +82,6 @@ function RadarChart({ data, labels, size = 300 }: RadarChartProps) {
           />
         ))}
         
-        {/* Linhas de eixo */}
         {labels.map((_, i) => {
           const angle = i * angleStep - Math.PI / 2;
           const x = radius * Math.cos(angle);
@@ -103,7 +99,6 @@ function RadarChart({ data, labels, size = 300 }: RadarChartProps) {
           );
         })}
 
-        {/* Área do gráfico */}
         <Polygon
           points={data.map((value, i) => {
             const r = (value / 100) * radius;
@@ -115,7 +110,6 @@ function RadarChart({ data, labels, size = 300 }: RadarChartProps) {
           strokeWidth="2"
         />
 
-        {/* Labels */}
         {labels.map((label, i) => {
           const angle = i * angleStep - Math.PI / 2;
           const x = (radius + 35) * Math.cos(angle);
@@ -254,7 +248,7 @@ export default function AssessmentResultScreen() {
       </View>
 
       <View style={styles.chartContainer}>
-        <Text style={styles.chartTitle}>Gráfico Radar</Text>
+        <Text style={styles.chartTitle}>Avaliação por Dimensão</Text>
         <View style={styles.radarContainer}>
           <RadarChart 
             data={result.chart.scores} 
@@ -265,7 +259,7 @@ export default function AssessmentResultScreen() {
       </View>
 
       <View style={styles.chartContainer}>
-        <Text style={styles.chartTitle}>Gráfico de Barras</Text>
+        <Text style={styles.chartTitle}>Desenvolvimento do nível de maturidade</Text>
         <ScrollView 
           horizontal 
           showsHorizontalScrollIndicator={false}

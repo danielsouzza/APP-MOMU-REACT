@@ -8,7 +8,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useAuthStore } from '../src/stores/auth';
 import { useRouter, usePathname } from 'expo-router';
 
-// Previne que a splash screen seja escondida automaticamente
 SplashScreen.preventAutoHideAsync();
 
 function HeaderRight() {

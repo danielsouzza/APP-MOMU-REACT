@@ -10,14 +10,12 @@ import { useAuthStore } from '../../src/stores/auth';
 
 type ViewMode = 'grouped' | 'ungrouped';
 
-// Mova para fora do componente principal e ajuste para garantir que todo texto está em <Text>
 const EmptyListComponent = () => (
   <View style={styles.emptyContainer}>
     <Text style={styles.emptyText}>Nenhuma avaliação encontrada</Text>
   </View>
 );
 
-// Remova o React.FC para evitar problemas de tipagem com o ListEmptyComponent
 const ToggleButtons = ({ viewMode, setViewMode }: {
   viewMode: ViewMode;
   setViewMode: (mode: ViewMode) => void;
