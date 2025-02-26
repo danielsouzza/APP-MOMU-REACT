@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+# Como Replicar o Projeto do Aplicativo MOMU
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este guia fornece um passo a passo para replicar o projeto do aplicativo MOMU, que foi desenvolvido utilizando React Native, TypeScript e Expo. Siga as instruções abaixo para configurar o ambiente de desenvolvimento e criar uma aplicação semelhante.
 
-## Get started
+## 1. Pré-requisitos
 
-1. Install dependencies
+Antes de começar, certifique-se de ter os seguintes pré-requisitos instalados em sua máquina:
 
-   ```bash
-   npm install
-   ```
+### Node.js
+- A versão mais recente do Node.js deve estar instalada. Você pode baixá-la em [nodejs.org](https://nodejs.org/).
 
-2. Start the app
+### Expo CLI
+- Instale o Expo CLI globalmente usando o seguinte comando:
+  ```sh
+  npm install -g expo-cli
+  ```
 
-   ```bash
-    npx expo start
-   ```
+### Git
+- Para clonar o repositório, você precisará do Git instalado. Você pode baixá-lo em [git-scm.com](https://git-scm.com/).
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 2. Clonando o Repositório
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Clone o repositório do projeto MOMU usando o Git. Abra o terminal e execute o seguinte comando:
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```sh
+git clone https://github.com/danielsouzza/APP-MOMU-REACT.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- Substitua `seu-usuario` pelo seu nome de usuário do GitHub.
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 3. Instalando Dependências
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Navegue até o diretório do projeto e instale as dependências necessárias:
 
-## Join the community
+```sh
+cd momu-app
+npm install
+```
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 4. Configurando o Ambiente
+
+### 4.1. Configuração do TypeScript
+
+O projeto já está configurado para usar TypeScript. Certifique-se de que o arquivo `tsconfig.json` está presente na raiz do projeto. Ele deve conter as configurações necessárias para o TypeScript.
+
+### 4.2. Configuração do Expo
+
+O projeto utiliza o Expo para facilitar o desenvolvimento. Para iniciar o projeto, execute o seguinte comando:
+
+```sh
+npx expo start
+```
+
+Isso abrirá uma nova aba no seu navegador com o painel do Expo, onde você pode visualizar o QR code para abrir o aplicativo em seu dispositivo móvel.
+
+## 5. Apresentação do Projeto
+[Apresentação em video](https://drive.google.com/file/d/1UrSoYDTzNLnwWMqXBAnOMu4iP1oqD3B5/view?usp=sharing).
